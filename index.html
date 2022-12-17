@@ -1,0 +1,85 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+   body{
+       background-color: #14130f;
+       font-family: 'Poppins';
+       
+       text-align: center;
+       padding-top: 10%;
+       
+   }
+   #ele{
+    opacity:0;
+    animation: opa_y 2s, rainbow 10s linear infinite;
+    
+   }
+   .rainbow{
+    animation: rainbow 10s linear infinite;
+   }
+@keyframes opa_y {
+ from {
+   opacity:0;
+   transform: translateY(100%);
+ }
+
+ to {
+   
+   opacity: 100%;
+   transform: translateY(0%);
+ }
+}
+
+@keyframes rainbow{
+       100%,0%{
+           color: rgb(255,0,0);
+       }
+       8%{
+           color: rgb(255,127,0);
+       }
+       16%{
+           color: rgb(255,255,0);
+       }
+       25%{
+           color: rgb(127,255,0);
+       }
+       33%{
+           color: rgb(0,255,0);
+       }
+       41%{
+           color: rgb(0,255,127);
+       }
+       50%{
+           color: rgb(0,255,255);
+       }
+       58%{
+           color: rgb(0,127,255);
+       }
+       66%{
+           color: rgb(0,0,255);
+       }
+       75%{
+           color: rgb(127,0,255);
+       }
+       83%{
+           color: rgb(255,0,255);
+       }
+       91%{
+           color: rgb(255,0,127);
+       }
+}
+</style>
+<body>
+    <p class="rainbow" id="ele" >kek: a very minimalistic & simple template.</p>
+
+</body> 
+<script>
+ var fr = 0;
+ document.getElementById("ele").addEventListener("animationend", () => {
+     //document.getElementById("text2").remove('opacity')
+     var styleSheet = document.createElement("style")
+     styleSheet.innerText = `#ele{
+        opacity:1 !important;
+    }`
+     document.body.appendChild(styleSheet)
+ });
+</script>
